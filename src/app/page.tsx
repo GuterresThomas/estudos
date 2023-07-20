@@ -1,9 +1,11 @@
-import Estudo from "@/components/estudo";
+import Form from "@/components/estudo";
 import React, { useState } from "react";
 
 const Home = () => {
   return (
-    <Estudo />
+      <div className="flex justify-center mt-10">
+        <Form />
+      </div>
   )
 }
 
