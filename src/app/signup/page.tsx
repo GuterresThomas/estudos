@@ -27,12 +27,12 @@ function Page() {
             <div className="">
                 <h1 className="mt-20 font-sans-Roboto font-semibold text-lg ">Sign up</h1>
                 <form onSubmit={handleForm} className="p-5 rounded-md mt-2 bg-zinc-100">
-                    <label className="font-sans-Roboto font-semibold m-2" htmlFor="email">
-                        <p>Email</p>
+                    <label className="font-sans-Roboto font-semibold m-2 bg-zinc-100" htmlFor="email">
+                        <p className="bg-zinc-100">Email</p>
                         <input onChange={(e) => setEmail(e.target.value)} required type="email" name="email" id="email" placeholder="example@mail.com" className="bg-zinc-50 p-2" />
                     </label>
-                    <label htmlFor="password">
-                        <p>Password</p>
+                    <label htmlFor="password" className="font-sans-Roboto bg-zinc-100 mt-2 font-semibold">
+                        <p className="bg-zinc-100">Password</p>
                         <input onChange={(e) => setPassword(e.target.value)} required type="password" name="password" id="password" placeholder="password" className="bg-zinc-50 p-2"/>
                     </label>
                     <br></br>

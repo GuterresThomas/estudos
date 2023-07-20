@@ -28,11 +28,11 @@ function Page() {
                 <h1 className="mt-20 font-sans-Roboto font-semibold text-lg ">Sign in</h1>
                 <form onSubmit={handleForm} className="p-5 rounded-md mt-2 bg-zinc-100">
                     <label className="font-sans-Roboto font-semibold m-2" htmlFor="email">
-                        <p>Email</p>
+                        <p className="bg-zinc-100">Email</p>
                         <input onChange={(e) => setEmail(e.target.value)} required type="email" name="email" id="email" placeholder="example@mail.com" className="bg-zinc-50 p-2" />
                     </label>
                     <label className="font-sans-Roboto font-semibold m-2" htmlFor="password">
-                        <p>Password</p>
+                        <p className="bg-zinc-100">Password</p>
                         <input onChange={(e) => setPassword(e.target.value)} required type="password" name="password" id="password" placeholder="password" className="bg-zinc-50 p-2" />
                     </label>
                     <br />
