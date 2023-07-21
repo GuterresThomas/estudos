@@ -2,6 +2,7 @@
 import React, { useEffect } from "react";
 import { useAuthContext } from "@/context/AuthContext";
 import { useRouter } from "next/navigation";
+import DashBoard from "@/components/dashboard";
 
 function Page() {
     const  user  = useAuthContext();
@@ -12,9 +13,9 @@ function Page() {
     }, [user]);
 
     return (
-        <h1>
-            Only logged in users can view this page
-        </h1>
+        <div>
+            <DashBoard />
+        </div>
     );
 }
 
