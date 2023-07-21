@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { useAuthContext } from "@/context/AuthContext";
 import { useRouter } from "next/navigation";
 import DashBoard from "@/components/dashboard";
+import Link from "next/link";
 
 function Page() {
     const  user  = useAuthContext();

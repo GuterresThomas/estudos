@@ -14,7 +14,7 @@ const MenuBar = () => {
         <div>
             <Menubar>
                 <MenubarMenu>
-                    <MenubarTrigger>File</MenubarTrigger>
+                    <MenubarTrigger className="font-sans-Roboto text-2xl font-semibold cursor-pointer">File</MenubarTrigger>
                     <MenubarContent>
                         <MenubarItem>
                             New Tab <MenubarShortcut>⌘T</MenubarShortcut>
