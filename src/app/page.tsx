@@ -4,10 +4,11 @@ import Link from "next/link";
 
 const Home = () => {
   return (
-      <div className="">
-        <h1>Home</h1>
-        <div className="justify-center flex"> 
-          <Link href={"/signin"}><h1>sigin page</h1></Link>
+      <div className="flex justify-center">
+        <div className="justify-center flex-col"> 
+          <Link href={"/signin"}><h1>SigIn page</h1></Link>
+          <Link href={"/signup"}><h1>SignUp page</h1></Link>
+          <Link href={"/admin"}><h1>Admin</h1></Link>
         </div>
       </div>
   )

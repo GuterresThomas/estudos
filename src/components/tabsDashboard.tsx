@@ -21,6 +21,9 @@ const TabsDashboard = () => {
             <Tabs defaultValue="" className="rounded-md bg-zinc-300 mb-3 mt-3">
                 <TabsList>
                     <TabsTrigger value="opt1">Informações Financeiras</TabsTrigger>
+                    <TabsTrigger value="opt1">Informações Financeiras</TabsTrigger>
+                    <TabsTrigger value="opt1">Informações Financeiras</TabsTrigger>
+                    <TabsTrigger value="opt1">Informações Financeiras</TabsTrigger>
                     <TabsTrigger value="opt2">Opções da conta</TabsTrigger>  
                 </TabsList>
                 <TabsContent value="opt1" className="flex space-x-3 bg-zinc-300 p-3 ">
