@@ -1,17 +1,12 @@
 
 import React from "react";
 import { getAuth, signOut } from "firebase/auth";
-import { url } from "inspector";
-
-
-
-
 
 const ButtonLogOut = () => {
     const handleButtonClick = () => {
         const auth = getAuth();
         signOut(auth).then(() => {
-            open('/')
+            window.location.replace('/');
         }).catch((error) => {
             console.log(error)
         });

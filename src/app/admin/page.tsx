@@ -10,9 +10,10 @@ function Page() {
     const router = useRouter();
 
     useEffect(() => {
-        if (user == null) router.push("/");
+        if (user == null) {
+            return  window.location.replace('/');
+        };
     }, [user]);
-
     return (
         <div>
             <DashBoard />
