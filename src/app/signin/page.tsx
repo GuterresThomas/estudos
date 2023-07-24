@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import signIn from "@/firebase/auth/signin";
 import { useRouter } from 'next/navigation'
+import { User } from "firebase/auth";
 
 function Page() {
     const [email, setEmail] = useState<string>('');
@@ -16,11 +17,11 @@ function Page() {
         if (error) {
             alert(error)
             return router.push("/");
+        }else () =>  {
+            console.log(result)
+            return router.push("/admin");
         }
 
-        // else successful
-        console.log(result);
-        return router.push("/admin");
     }
 
     return (
