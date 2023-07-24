@@ -18,7 +18,7 @@ import {
 const NavMenu = () => {
     return (
         <div className="justify-center flex mt-10 bg-zinc-50">
-            <div className="bg-zinc-50">
+            <div className="bg-zinc-50 mr-64 h-10">
             <Avatar>
                 <AvatarImage src="https://github.com/shadcn.png" />
                 <AvatarFallback>CN</AvatarFallback>
