@@ -19,7 +19,7 @@ function Page() {
             return router.push("/");
         }
             console.log(result)
-            return router.push("/admin");
+            return router.push("/user");
     
 
     }

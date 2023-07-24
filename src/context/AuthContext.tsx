@@ -12,6 +12,7 @@ const auth = getAuth(firebase_app);
 
 interface CustomUser extends User {
     isAdmin: boolean;
+    isUser: boolean;
 }
 
 interface AuthContextType {
@@ -37,6 +38,7 @@ export const AuthContextProvider: React.FC<AuthContextProviderProps> = ({ childr
                 const customUser: CustomUser = {
                     ...authUser,
                     isAdmin: authUser.email === 'admin@admin.com',
+                    isUser: authUser.email !== 'admin@admin.com' && authUser.email !== null,
                 };
 
                 setUser(customUser);
