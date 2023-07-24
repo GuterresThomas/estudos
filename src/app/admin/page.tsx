@@ -4,6 +4,7 @@ import { useAuthContext } from "@/context/AuthContext";
 import { useRouter } from "next/navigation";
 import DashBoard from "@/components/dashboard";
 import Link from "next/link";
+import AdminRouteProtection from "@/components/adminrouteprotection";
 
 function Page() {
     const  user  = useAuthContext();
@@ -16,7 +17,9 @@ function Page() {
     }, [user]);
     return (
         <div>
-            <DashBoard />
+            <AdminRouteProtection>
+                <DashBoard />
+            </AdminRouteProtection>
         </div>
     );
 }
