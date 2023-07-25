@@ -48,7 +48,7 @@ const NavMenu = () => {
             <NavigationMenu>
                     <NavigationMenuList>
                         <NavigationMenuItem className="bg-zinc-50">
-                            <Link href="#" className="bg-zinc-50 font-semibold font-sans-Roboto hover:font-bold"><p className="bg-zinc-50">Produtos</p></Link>
+                            <Link href="/products" className="bg-zinc-50 font-semibold font-sans-Roboto hover:font-bold"><p className="bg-zinc-50">Produtos</p></Link>
                         </NavigationMenuItem>
                     </NavigationMenuList>
                 </NavigationMenu>

@@ -1,4 +1,6 @@
+'use client'
 import React, { useState } from 'react';
+import axios from 'axios';
 
 const StockForm = () => {
   const [itemName, setItemName] = useState('');
@@ -18,16 +20,9 @@ const StockForm = () => {
 
       // Envia o novo item para o servidor (usando fetch ou alguma biblioteca de HTTP como axios)
       // Exemplo de uso do fetch:
-      fetch('/api/addItemToStock', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(newItem),
-      })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log('Item adicionado:', data);
+       axios.post('/api/addItemToStock', newItem)
+      .then((response) => {
+        console.log('Item adicionado:', response.data);
         // Limpa o formulário após o envio
         setItemName('');
         setItemPrice('');
