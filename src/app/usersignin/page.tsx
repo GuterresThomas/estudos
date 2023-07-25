@@ -27,7 +27,7 @@ function Page() {
     return (
         <div className="flex justify-center">
             <div>
-                <h1 className="mt-20 font-sans-Roboto font-semibold text-lg ">Login</h1>
+                <h1 className="mt-20 font-sans-Roboto font-semibold text-lg ">Login de Usuário:</h1>
                 <form onSubmit={handleForm} className="p-5 rounded-md mt-2 bg-zinc-100">
                     <label className="font-sans-Roboto font-semibold m-2" htmlFor="email">
                         <p className="bg-zinc-100">Email</p>
