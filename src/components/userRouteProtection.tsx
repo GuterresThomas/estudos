@@ -15,6 +15,7 @@ const UserRouteProtection: React.FC<UserRouteProtectionProps> = ({ children }) =
   React.useEffect(() => {
     if (!user || !user.isUser ) {
       // Redirecionar usuário não autenticado ou não administrador para a página inicial
+      alert('não autorizado!')
       router.push('/');
     }
   }, [user]);
