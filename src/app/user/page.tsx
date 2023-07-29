@@ -7,6 +7,7 @@ import Link from "next/link";
 import AdminRouteProtection from "@/components/adminrouteprotection";
 import UserRouteProtection from "@/components/userRouteProtection";
 
+
 function Page() {
     const  user  = useAuthContext();
     const router = useRouter();
