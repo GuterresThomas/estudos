@@ -1,9 +1,11 @@
 
 import React from "react";
+import ProductsApp from "@/components/products"
 
 const testeDb = () => {
     return (
-    <button>teste</button>
+    
+    <ProductsApp />
     )
 }
 
