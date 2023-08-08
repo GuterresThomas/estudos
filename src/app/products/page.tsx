@@ -1,11 +1,13 @@
 
 import React from "react";
 import ProductsApp from "@/components/products"
+import UserRouteProtection from "@/components/userRouteProtection"
 
 const testeDb = () => {
     return (
-    
-    <ProductsApp />
+    <UserRouteProtection>
+        <ProductsApp />
+    </UserRouteProtection>
     )
 }
 
