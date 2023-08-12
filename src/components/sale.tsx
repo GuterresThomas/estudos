@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 const SalesApp = () => {
   const [sales, setSales] = useState([]);
   const [newSale, setNewSale] = useState({ date: '', customer_id: '', total_amount: 0 });
+  const [customers, setCustomers] = useState([]);
 
   const fetchSales = async () => {
     const response = await fetch('http://localhost:3000/sales');
@@ -25,8 +26,29 @@ const SalesApp = () => {
     }
   };
 
+  const deleteSale = async (id) => {
+    const response = await fetch(`http://localhost:3000/sales/${id}`, {
+      method: 'DELETE',  
+    })
+    if(response.status === 204){
+      fetchSales();
+    }
+  }
+  const fetchCustomers = async () => {
+    const response = await fetch('http://localhost:3000/customers');
+    const data = await response.json();
+    setCustomers(data);
+  };
+  const fetchStorages = async () => {
+    const response = await fetch('http://localhost:3000/storages');
+    const data = await response.json();
+    setStorages(data);
+  };
+
   useEffect(() => {
+    fetchCustomers();
     fetchSales();
+    fetchStorages();
   }, []);
 
   return (
@@ -36,7 +58,9 @@ const SalesApp = () => {
         <ul className="space-y-2 m-4 p-4">
           {sales.map((sale) => (
             <li key={sale.id}>
-              Data: {sale.date} - Cliente ID: {sale.customer_id} - Total: {sale.total_amount}
+              Data: {sale.date} - Cliente: {sale.customer_id} - Total: {sale.total_amount}
+              <button className="bg-zinc-500 p-1 m-1 rounded-full font-bold text-sm text-zinc-50 hover:bg-zinc-800 " onClick={() => deleteSale(sale.id)}>Excluir</button>
+           
             </li>
           ))}
         </ul>
@@ -50,14 +74,20 @@ const SalesApp = () => {
               onChange={(e) => setNewSale({ ...newSale, date: e.target.value })}
             />
           </label>
-          <label>
-            Cliente ID:
-            <input
-              type="number"
-              value={newSale.customer_id}
-              onChange={(e) => setNewSale({ ...newSale, customer_id: parseInt(e.target.value) })}
-            />
-          </label>
+        <label>
+          Cliente:
+          <select
+            value={newSale.customer_id}
+            onChange={(e) => setNewSale({ ...newSale, customer_id: parseInt(e.target.value) })}
+          >
+            <option value="">Selecione um cliente</option>
+            {customers.map((customer) => (
+              <option key={customer.id} value={customer.id}>
+                {customer.name}
+              </option>
+            ))}
+          </select>
+        </label>
           <label>
             Total:
             <input

@@ -1,6 +1,7 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { CardFinanc } from "./cardsFinanc"
 import { CardClientes } from "./cardsClientes"
+import CustomersApp from "@/components/customer"
 
 import { Button } from "@/components/ui/button"
 import {
@@ -21,7 +22,7 @@ const TabsDashboard = () => {
             <Tabs defaultValue="" className="rounded-md bg-zinc-300 mb-3 mt-3">
                 <TabsList>
                     <TabsTrigger value="opt1">Informações Financeiras</TabsTrigger>
-                    <TabsTrigger value="opt1">Informações Financeiras</TabsTrigger>
+                    <TabsTrigger value="opt3">+Clientes</TabsTrigger>
                     <TabsTrigger value="opt1">Informações Financeiras</TabsTrigger>
                     <TabsTrigger value="opt1">Informações Financeiras</TabsTrigger>
                     <TabsTrigger value="opt2">Opções da conta</TabsTrigger>  
@@ -54,6 +55,9 @@ const TabsDashboard = () => {
                             <Button>Save password</Button>
                         </CardFooter>
                     </Card>
+                </TabsContent>
+                <TabsContent value="opt3" className="flex space-x-3 bg-zinc-300 p-3 ">
+                    <CustomersApp />
                 </TabsContent>
             </Tabs>
 

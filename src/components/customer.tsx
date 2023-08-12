@@ -26,6 +26,15 @@ const CustomersApp = () => {
     }
   };
 
+  const deleteCustomer = async (id) => {
+    const response = await fetch(`http://localhost:3000/customers/${id}`, {
+      method: 'DELETE',  
+    })
+    if(response.status === 204){
+      fetchCustomers();
+    }
+  }
+
   useEffect(() => {
     fetchCustomers();
   }, []);
@@ -38,6 +47,7 @@ const CustomersApp = () => {
             {customers.map((customer) => (
             <li key={customer.id}>
                 Nome: {customer.name} - Email: {customer.email}
+                <button className="bg-zinc-500 p-1 m-1 rounded-full font-bold text-sm text-zinc-50 hover:bg-zinc-800 " onClick={() => deleteCustomer(customer.id)}>Excluir</button>
             </li>
             ))}
         </ul>
