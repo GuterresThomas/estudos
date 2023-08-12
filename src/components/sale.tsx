@@ -5,6 +5,7 @@ const SalesApp = () => {
   const [sales, setSales] = useState([]);
   const [newSale, setNewSale] = useState({ date: '', customer_id: '', total_amount: 0 });
   const [customers, setCustomers] = useState([]);
+  const [storages, setStorages] = useState([]);
 
   const fetchSales = async () => {
     const response = await fetch('http://localhost:3000/sales');
